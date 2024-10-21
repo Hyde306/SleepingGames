@@ -29,15 +29,8 @@ public class yoshida : MonoBehaviour
 		{
 			Vector2 endPos = Input.mousePosition;
 			Vector2 startDirection = -1 * (endPos - startPos).normalized;
-			this.rigid2d.AddForce(startDirection * 500);
+			this.rigid2d.AddForce(startDirection * 550);
 		}
-
-		// テスト用：スペースキー押下で停止
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			this.rigid2d.velocity *= 0;
-		}
-
 
 		// Spaceキーを離すと動き出す
 		//if(Input.GetKeyUp(KeyCode.Space)) {
