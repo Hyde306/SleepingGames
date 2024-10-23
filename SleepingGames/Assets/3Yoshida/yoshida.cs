@@ -4,48 +4,51 @@ using UnityEngine;
 
 public class yoshida : MonoBehaviour
 {
+    Rigidbody2D rigid2d;
+    Vector2 startPos;
+    float speed = 0;
+    bool shotGaugeSet = false;
 
-	Rigidbody2D rigid2d;
-	Vector2 startPos;
-	private float speed;
+    void Start()
+    {
+        this.rigid2d = GetComponent<Rigidbody2D>();
+    }
 
+    void Update()
+    {
+        // マウスを押した地点の座標を記録
+        if (Input.GetMouseButtonDown(0))
+        {
+            this.startPos = Input.mousePosition;
+            shotGaugeSet = true;
+            Debug.Log("Mouse down at: " + startPos);
+        }
 
-	void Start()
-	{
-		this.rigid2d = GetComponent<Rigidbody2D>();
-		this.speed = 100;
+        // マウスを離した地点の座標から、発射方向を計算
+        if (Input.GetMouseButtonUp(0))
+        {
+            Vector2 endPos = Input.mousePosition;
+            Vector2 direction = (startPos - endPos).normalized;
+            float distance = Vector2.Distance(startPos, endPos);  // 距離を計算
+            float speed = distance * 3;  // 距離に応じてスピードを設定
+            this.rigid2d.AddForce(direction * speed);
+            shotGaugeSet = false;
+            Debug.Log("Mouse up at: " + endPos);
+            Debug.Log("Direction: " + direction);
+            Debug.Log("Distance: " + distance);
+            Debug.Log("Speed: " + speed);
+        }
 
-	}
+        // テスト用：スペースキー押下で停止
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            this.rigid2d.velocity *= 0;
+            Debug.Log("Space key pressed: Velocity set to 0");
+        }
+    }
 
-	void Update()
-	{
-
-		// マウスの動きと反対方向に発射される
-		if (Input.GetMouseButtonDown(0))
-		{
-			this.startPos = Input.mousePosition;
-		}
-		else if (Input.GetMouseButtonUp(0))
-		{
-			Vector2 endPos = Input.mousePosition;
-			Vector2 startDirection = -1 * (endPos - startPos).normalized;
-			this.rigid2d.AddForce(startDirection * 550);
-		}
-
-		// Spaceキーを離すと動き出す
-		//if(Input.GetKeyUp(KeyCode.Space)) {
-		//
-		//	this.speed = 100.0f;
-		//	this.rigid2d.AddForce(transform.up * speed);
-		//}
-
-	}
-
-	void FixedUpdate()
-	{
-
-		this.rigid2d.velocity *= 0.995f;
-
-	}
-
+    void FixedUpdate()
+    {
+        this.rigid2d.velocity *= 0.995f;
+    }
 }
