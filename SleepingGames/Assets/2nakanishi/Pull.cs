@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class yoshida : MonoBehaviour
+public class Pull : MonoBehaviour
 {
     Rigidbody2D rigid2d;
     Vector2 startPos;
