@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 121788274}
   - component: {fileID: 121788273}
   m_Layer: 0
-  m_Name: yazirusi 1
+  m_Name: yazirusi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 153910715}
   - component: {fileID: 153910717}
   m_Layer: 0
-  m_Name: "\u89B3\u8449\u690D\u7269"
+  m_Name: kanyousyokubutu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 406976107}
   - component: {fileID: 406976109}
   m_Layer: 0
-  m_Name: raitobar (2)
+  m_Name: raitobar 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 414639897}
   - component: {fileID: 414639896}
   m_Layer: 0
-  m_Name: gomibakosita 1
+  m_Name: gomibakosita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 507408758}
   - component: {fileID: 507408760}
   m_Layer: 0
-  m_Name: raitobar (1)
+  m_Name: raitobar 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 585637714}
   - component: {fileID: 585637716}
   m_Layer: 0
-  m_Name: raitohed (4)
+  m_Name: raitohed 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 743379332}
   - component: {fileID: 743379331}
   m_Layer: 0
-  m_Name: suta-to 1
+  m_Name: suta-to
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1466,7 +1466,7 @@ GameObject:
   - component: {fileID: 1216930104}
   - component: {fileID: 1216930106}
   m_Layer: 0
-  m_Name: raitohed (3)
+  m_Name: raitohed 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 1240749433}
   - component: {fileID: 1240749432}
   m_Layer: 0
-  m_Name: "\u7A93"
+  m_Name: mado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1930,7 +1930,7 @@ GameObject:
   - component: {fileID: 1740662131}
   - component: {fileID: 1740662133}
   m_Layer: 0
-  m_Name: raitobar (3)
+  m_Name: raitobar 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2043,7 +2043,7 @@ GameObject:
   - component: {fileID: 1914892194}
   - component: {fileID: 1914892193}
   m_Layer: 0
-  m_Name: "\u673A 1"
+  m_Name: terebi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2208,7 +2208,7 @@ GameObject:
   - component: {fileID: 2010577374}
   - component: {fileID: 2010577373}
   m_Layer: 0
-  m_Name: tukue
+  m_Name: tukue 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2427,7 +2427,7 @@ GameObject:
   - component: {fileID: 2058444965}
   - component: {fileID: 2058444967}
   m_Layer: 0
-  m_Name: raitohed (2)
+  m_Name: raitohed 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2775,7 +2775,7 @@ GameObject:
   - component: {fileID: 2120483227}
   - component: {fileID: 2120483226}
   m_Layer: 0
-  m_Name: gomibakoue 1
+  m_Name: gomibakoue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 2126715226}
   - component: {fileID: 2126715225}
   m_Layer: 0
-  m_Name: tukue (1)
+  m_Name: tukue 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
