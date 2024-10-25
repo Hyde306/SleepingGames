@@ -3,7 +3,7 @@ using UnityEngine;
 public class ArrowScaler : MonoBehaviour
 {
     public float maxLength = 3.0f; // Å‘å’·‚³
-    public float minLength = 0.5f; // Å¬’·‚³
+    public float minLength = 0.0f; // Å¬’·‚³
     private bool isShooting = false; // ”­Ë’†‚©‚Ç‚¤‚©‚ğ’ÇÕ
 
     public void SetLength(float length)
