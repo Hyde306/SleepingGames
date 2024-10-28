@@ -1016,7 +1016,6 @@ GameObject:
   - component: {fileID: 861913229}
   - component: {fileID: 861913228}
   - component: {fileID: 861913232}
-  - component: {fileID: 861913233}
   - component: {fileID: 861913234}
   m_Layer: 0
   m_Name: yoshikuzu
@@ -1141,19 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03654f3534a84445a742459e8b7cf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &861913233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861913227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24cd8b34c353394299ab9b05a916002, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrow: {fileID: 121788272}
+  arrowPrefab: {fileID: 121788272}
 --- !u!114 &861913234
 MonoBehaviour:
   m_ObjectHideFlags: 0
