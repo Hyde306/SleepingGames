@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03654f3534a84445a742459e8b7cf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 0}
+  arrowPrefab: {fileID: 121788272}
 --- !u!114 &861913234
 MonoBehaviour:
   m_ObjectHideFlags: 0
