@@ -6,6 +6,7 @@ TagManager:
   tags:
   - gomi
   - gomibako
+  - Trash
   layers:
   - Default
   - TransparentFX
