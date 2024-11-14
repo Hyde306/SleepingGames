@@ -8,7 +8,7 @@ public class kabeyurasu : MonoBehaviour
     {
         if (other.gameObject.CompareTag("tukue"))
         {
-            ˆ—
+            
         }
     }
 }
