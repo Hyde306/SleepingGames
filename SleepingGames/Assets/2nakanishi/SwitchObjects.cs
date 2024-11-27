@@ -15,21 +15,13 @@ public class SwitchObjects : MonoBehaviour
         // 全てのオブジェクトを初期状態で非表示にする
         foreach (GameObject obj in objects)
         {
-            if (obj == null)
-            {
-                Debug.LogError("objectsリストにnullが含まれています。Inspectorで正しく設定されているか確認してください。");
-            }
-            else
+            if (obj != null)
             {
                 obj.SetActive(false);
             }
         }
 
-        if (initialObject == null)
-        {
-            Debug.LogError("initialObjectが設定されていません。Inspectorで正しく設定されているか確認してください。");
-        }
-        else
+        if (initialObject != null)
         {
             initialObject.SetActive(true); // ゲーム開始時に最初のオブジェクトを表示する
             Debug.Log("初期オブジェクトが表示されました。");
@@ -66,25 +58,23 @@ public class SwitchObjects : MonoBehaviour
                 GameObject currentObject = objects[currentIndex];
 
                 // 現在のオブジェクトが null でないことを確認
-                if (currentObject == null)
+                if (currentObject != null)
                 {
-                    Debug.LogError("objectsリストにnullが含まれています。Inspectorで正しく設定されているか確認してください。");
-                    continue;
+                    // 次のオブジェクトを初期オブジェクトの位置に移動させる
+                    currentObject.transform.position = initialPosition;
+                    Debug.Log($"次のオブジェクト {currentObject.name} の位置を {initialPosition} に設定しました。"); // デバッグメッセージ
+
+                    yield return new WaitForSeconds(delay);
+
+                    currentObject.SetActive(true);
+                    Debug.Log($"{currentObject.name} が初期オブジェクトの位置に表示されました。位置: {initialPosition}"); // デバッグメッセージ
                 }
-
-                // 次のオブジェクトを初期オブジェクトの位置に移動させる
-                currentObject.transform.position = initialPosition;
-                Debug.Log($"次のオブジェクト {currentObject.name} の位置を {initialPosition} に設定しました。"); // デバッグメッセージ
-
-                yield return new WaitForSeconds(delay);
-
-                currentObject.SetActive(true);
-                Debug.Log($"{currentObject.name} が初期オブジェクトの位置に表示されました。位置: {initialPosition}"); // デバッグメッセージ
 
                 // 次のオブジェクトに進む
                 currentIndex++;
             }
         }
+
         isSwitching = false; // コルーチンが終了したことを示す
     }
 }
