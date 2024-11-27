@@ -1,31 +1,90 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SwitchObjects : MonoBehaviour
 {
-    public GameObject object1; // 最初に表示されるオブジェクト
-    public GameObject object2; // 消えた後に表示されるオブジェクト
+    public GameObject initialObject; // 最初に表示されるオブジェクト
+    public List<GameObject> objects; // 出現させるオブジェクトのリスト
+    public float delay = 2f; // 各オブジェクトを出現させるまでの遅延時間（秒）
+    private int currentIndex = 0; // 現在のオブジェクトのインデックス
+    private bool isSwitching = false; // コルーチンが実行中かどうかのフラグ
 
     void Start()
     {
-        // ゲーム開始時にobject2を非表示にする
-        object2.SetActive(false);
+        // 全てのオブジェクトを初期状態で非表示にする
+        foreach (GameObject obj in objects)
+        {
+            if (obj == null)
+            {
+                Debug.LogError("objectsリストにnullが含まれています。Inspectorで正しく設定されているか確認してください。");
+            }
+            else
+            {
+                obj.SetActive(false);
+            }
+        }
+
+        if (initialObject == null)
+        {
+            Debug.LogError("initialObjectが設定されていません。Inspectorで正しく設定されているか確認してください。");
+        }
+        else
+        {
+            initialObject.SetActive(true); // ゲーム開始時に最初のオブジェクトを表示する
+            Debug.Log("初期オブジェクトが表示されました。");
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isSwitching)
         {
-            // object1の位置を取得
-            Vector3 position = object1.transform.position;
-
-            // object1を非表示にする
-            object1.SetActive(false);
-
-            // object2をobject1の位置に移動する（向きはそのまま）
-            object2.transform.position = position;
-            object2.SetActive(true);
-
-            Debug.Log("スペースキーが押されました。object2が表示されました。");
+            Debug.Log("スペースキーが押されました。"); // デバッグメッセージ
+            StartCoroutine(SwitchObjectsSequentially());
         }
+    }
+
+    private IEnumerator SwitchObjectsSequentially()
+    {
+        isSwitching = true; // コルーチンが実行中であることを示す
+
+        // 初期オブジェクトが正しく設定されているか確認
+        if (initialObject != null)
+        {
+            // 初期オブジェクトの位置を取得
+            Vector3 initialPosition = initialObject.transform.position;
+            Debug.Log($"初期オブジェクトの位置: {initialPosition}"); // デバッグメッセージ
+
+            // 初期オブジェクトを非表示にする
+            initialObject.SetActive(false);
+            Debug.Log("初期オブジェクトが非表示になりました。");
+
+            // 遅延してオブジェクトを表示する
+            while (currentIndex < objects.Count)
+            {
+                GameObject currentObject = objects[currentIndex];
+
+                // 現在のオブジェクトが null でないことを確認
+                if (currentObject == null)
+                {
+                    Debug.LogError("objectsリストにnullが含まれています。Inspectorで正しく設定されているか確認してください。");
+                    continue;
+                }
+
+                // 次のオブジェクトを初期オブジェクトの位置に移動させる
+                currentObject.transform.position = initialPosition;
+                Debug.Log($"次のオブジェクト {currentObject.name} の位置を {initialPosition} に設定しました。"); // デバッグメッセージ
+
+                yield return new WaitForSeconds(delay);
+
+                currentObject.SetActive(true);
+                Debug.Log($"{currentObject.name} が初期オブジェクトの位置に表示されました。位置: {initialPosition}"); // デバッグメッセージ
+
+                // 次のオブジェクトに進む
+                currentIndex++;
+            }
+        }
+        isSwitching = false; // コルーチンが終了したことを示す
     }
 }
